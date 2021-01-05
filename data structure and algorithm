@@ -1,0 +1,565 @@
+#include<iostream>
+#include<stdio.h>
+#include<stdlib.h>
+#include<list>
+#include<fstream>
+#include<string.h>
+#include<conio.h>
+using namespace std;
+
+class structure{
+	public:
+		int stick[3];
+		int n=3;
+		int top=-1;	
+		
+	////////////////////////////////all defined functions available here////////////////////////////////////////////////////////////
+		void main();
+		void linear();
+		void array();
+		void stack();
+		void queue();
+		void link();
+		void stackpush(int val);
+		void stackpop();
+		void stackdisplay();
+		void nonlinear();
+		void tree();
+		void graphs();
+		void graphmemory();
+		void add_edge();
+		void memeorygraph();
+		void operations();
+	};
+	////////////////////////////////////////////linear data structure function/////////////////////////////////////////////////////
+void structure::linear(){
+	cout<<"linear data structure page:"<<endl;
+	cout<<endl;
+	cout<<"1: Stack"<<endl;
+	cout<<"2: Queue"<<endl;
+	cout<<"3: Array"<<endl;
+	cout<<"4: Link List"<<endl;
+	cout<<"5: Go To Main Menu"<<endl;
+	int choose;
+	cout<<"Enter Your choice:"<<endl;
+	cin>>choose;
+	
+	if(choose==1){
+		system("cls");
+		stack();
+	}
+	else if(choose==2){
+		system("cls");
+		queue();
+	}
+	else if(choose==3){
+		system("cls");
+		array();
+	}
+	else if(choose==4){
+		system("cls");
+		link();
+	}
+	else if(choose==5){
+		system("cls");
+		main();
+	}
+	else{
+		cout<<"wrong choice"<<endl;
+		getch();
+		system("cls");
+		linear();
+	}
+}
+	/////////////////////////////////Stack uisng Array function///////////////////////////////////////////////////////////////
+	
+void structure::stackpush(int val){
+	if(top==n-1){
+		cout<<"Stack Overflow"<<endl;
+	}
+	else{
+		top++;
+		stick[top]=val;
+	}
+}
+void structure::stackpop(){
+	if(top==-1){
+		cout<<"Stack Underflow"<<endl;
+	}
+	else{
+		int item;
+		item=stick[top];
+		cout<<"The Popped Element is "<< stick[top] <<endl;
+		top--;
+	}
+
+}
+void structure::stackdisplay(){
+	if(top>=0){
+		cout<<"Stack Elements Are: ";
+		for(int i=top; i>=0; i--)
+		cout<<stick[i]<<" ";
+		cout<<endl;
+	}
+	else{
+		cout<<"Stack Is Empty"<<endl;
+	}
+}	
+
+	/////////////////////////////function Array //////////////////////////////////////////////////////////////////////////////
+void structure::array()	{
+	
+	cout<<"This Page Belongs To Array : "<<endl;
+	cout<<"----------------------------"<<endl;
+	cout<<endl;
+	cout<<endl;
+	cout<<"1: Array Definition"<<endl;
+	cout<<"2: Program Of Array"<<endl;
+	cout<<"3: Main Menu"<<endl;
+	cout<<"4: Go Back"<<endl;
+	int choose;
+	cin>>choose;
+	
+	if(choose==1){
+		system("cls");
+		cout<<"array definition"<<endl;
+	}
+	else if(choose==2){
+		system("cls");
+		cout<<"program of array"<<endl;
+	}
+	else if(choose==3){
+		system("cls");
+		main();
+	}else if(choose==4){
+		system("cls");
+		linear();
+	}
+	
+}
+/////////////////////////////function Stack /////////////////////////////////////////////////////////////////////////////////
+void structure::stack(){
+	
+	cout<<"This Page Belongs To Stack "<<endl;
+	cout<<"---------------------------"<<endl;
+	cout<<endl;
+	cout<<endl;
+	cout<<"1: Definition of Stack"<<endl;
+	cout<<"2: Program of Stack"<<endl;
+	cout<<"3: Main Menu"<<endl;
+	cout<<"4: Go Back"<<endl;
+	int choose;
+	cin>>choose;
+	
+	if(choose==1){
+		system("cls");
+		cout<<"STACK"<<endl;
+		cout<<"------"<<endl;
+		cout<<endl;
+		cout<<"A Stack is a type of data structure based on the technique of Last-In-First-Out (LIFO)."<<endl;
+		cout<<"LIFO is a technique for storing data in a data structure and retrieving the data back."<<endl;
+		cout<<"It stores the newly entered object on the top of all previously entered objects."<<endl;
+		cout<<"This operation is known as PUSH operation."<<endl;
+		cout<<"The object stored at top of stack is removed first and is called POP operation."<<endl;
+		cout<<endl;
+		cout<<"        There are two restrictions while processing a stack :"<<endl;
+		cout<<"=> A PUSH operation is not allowed whn the stack is full."<<endl;
+		cout<<"=> A POP operation is not allowed when the stack is empty."<<endl;
+		cout<<endl;
+		cout<<"Real World Example:"<<endl;
+		cout<<"--------"<<endl;
+		cout<<"A good real-world example of a stack is the pile of dinner plates. when you remove a plate"<<endl;
+		cout<<"from pile , you take the plate on the top of the pile. but this is exactly the plate that"<<endl;
+		cout<<"was added most recently to the pile. if you want the plate at the bottom of the pile,"<<endl;
+		cout<<"you must remove all the plates on the top of it to reach it."<<endl;
+		cout<<endl;
+		cout<<endl;
+		cout<<"Algorithm:"<<endl;
+		cout<<"----------"<<endl;
+		cout<<""<<endl;
+		cout<<"Press 1 To GO Back:"<<endl;
+		int choo;
+		cin>>choo;
+			if(choo==1){
+			system("cls");
+			stack();
+		}
+	}
+	else if(choose==2){
+		system("cls");
+		cout<<"Program that implements a Stack:"<<endl;
+		cout<<"--------------------------------"<<endl;
+		cout<<"1: Go Back"<<endl;
+		cout<<"2: Execute the program"<<endl;
+		cout<<"3: Show the code"<<endl;
+		int choi;
+		cin>>choi;
+		if(choi==1){
+			system("cls");
+			stack();
+		}
+		else if(choi==2){
+			system("cls");
+			cout<<"1: Push Element In stack"<<endl;
+			cout<<"2: Pop Element From stack"<<endl;
+			cout<<"3: Display Elements In stack"<<endl;
+			cout<<endl;
+			int ch,val;
+			do{
+				cout<<"enter your choice:"<<endl;
+				cin>>ch;
+				switch(ch){
+					case 1:{
+						int j;
+						for(j=0;j<=3;j++){
+							cout<<"Enter Value To Be Pushed:"<<endl;
+							cin>>val;
+							stackpush(val);
+						}
+						break;
+					}
+					case 2:{
+						stackpop();
+						break;
+					}
+					case 3:{
+						stackdisplay();
+						int ent;
+						cout<<endl;
+						cout<<"Enter 1 To Go Back."<<endl;
+						cin>>ent;
+						if(ent==1){
+							system("cls");
+							stack();
+						}
+						break;
+					}
+					default:{
+						cout<<"Invalid Choice"<<endl;
+					}
+					
+				}		
+			}while(ch!=3);
+		
+		}
+		else if(choi==3){
+			system("cls");
+			cout<<"CODE:"<<endl;
+			cout<<"-----"<<endl;
+			cout<<endl;
+			cout<<"class structure{"<<endl;
+			cout<<"public:"<<endl;
+			cout<<"int stick[3]; <= globaly defined variable"<<endl;
+			cout<<"int n=3;      <= globally defined varialbe"<<endl;
+			cout<<"int top=-1;   <= globally defined variable"<<endl;
+			cout<<endl;
+			cout<<"void structure::stackpush(int val){  //push function//"<<endl;
+			cout<<"if(top==n-1){"<<endl;
+		    cout<<"cout<<'Stack Overflow'<<endl;"<<endl;
+			cout<<"}"<<endl;		
+			cout<<"else{"<<endl;
+			cout<<"top++;"<<endl;
+			cout<<"stick[top]=val;"<<endl;
+			cout<<"}"<<endl;
+			cout<<"}"<<endl;
+			cout<<"void structure::stackpop(){   //pop function//"<<endl;
+			cout<<"if(top==-1){"<<endl;
+			cout<<"cout<<'Stack Underflow'<<endl;"<<endl;
+			cout<<"}"<<endl;
+			cout<<"else{"<<endl;
+			cout<<"int item;"<<endl;
+			cout<<"item=stick[top];"<<endl;
+			cout<<"cout<<'The Popped Element is '<< stick[top] <<endl;"<<endl;
+			cout<<"top--;"<<endl;
+			cout<<"}"<<endl;
+			cout<<"}"<<endl;
+			cout<<"void structure::stackdisplay(){    //display function//"<<endl;
+			cout<<"if(top>=0){"<<endl;
+			cout<<"cout<<'Stack Elements Are: '<<endl;"<<endl;
+			cout<<"for(int i=top; i>=0; i--)"<<endl;
+			cout<<"cout<<stick[i]<<'' ';"<<endl;
+			cout<<"cout<<endl;"<<endl;
+			cout<<"}"<<endl;
+			cout<<"else{"<<endl;
+			cout<<"cout<<'Stack Is Empty'<<endl;"<<endl;
+			cout<<"}"<<endl;
+			cout<<"}"<<endl;
+			cout<<endl;
+			cout<<"main() {"<<endl;
+			cout<<"structure.obj,ch, val;"<<endl;
+			cout<<"do  {"<<endl;
+			cout<<"cout<<'enter your choice:'"<<endl;
+			cout<<"cin>>ch;"<<endl;
+			cout<<"switch(ch){"<<endl;
+			cout<<"int j;"<<endl;
+			cout<<"for(j=0; j<=3; j++){"<<endl;
+			cout<<"cout<<'enter value to be pushed:'"<<endl;
+			cout<<"cin>>val;"<<endl;
+			cout<<"stackpush(val);"<<endl;
+			cout<<"}"<<endl;
+			cout<<"break;"<<endl;
+			cout<<"}"<<endl;
+			cout<<"case 2: {"<<endl;
+			cout<<"stackpop();"<<endl;
+			cout<<"break;"<<endl;
+			cout<<"}"<<endl;
+			cout<<"case 3: {"<<endl;
+			cout<<"stackdisplay();"<<endl;
+			cout<<"int ent;"<<endl;
+			cout<<"}"<<endl;
+			cout<<"break;"<<endl;
+			cout<<"}"<<endl;
+			cout<<"} while(ch!=3);"<<endl;
+			cout<<"}"<<endl;
+			cout<<endl;
+			cout<<endl;
+			cout<<"OUTPUT:"<<endl;
+			cout<<"-------"<<endl;
+			cout<<"1: Push Element In Stack"<<endl;
+			cout<<"2: Pop Element From Stack"<<endl;
+			cout<<"3: Display Elements In Stack"<<endl;
+			cout<<endl;
+			cout<<"enter your choice:"<<endl;
+			cout<<"1"<<endl;
+			cout<<"enter Value To Be Pushed:"<<endl;
+			cout<<"10"<<endl;
+			cout<<"enter Value To Be Pushed:"<<endl;
+			cout<<"20"<<endl;
+			cout<<"enter Value To Be Pushed:"<<endl;
+			cout<<"30"<<endl;
+			cout<<"enter Value To Be Pushed:"<<endl;
+			cout<<"40"<<endl;
+			cout<<"Stack Overflow"<<endl;
+			cout<<"enter your choice:"<<endl;
+			cout<<"2"<<endl;
+			cout<<"The Popped Element is 30"<<endl;
+			cout<<"enter your choice:"<<endl;
+			cout<<"3"<<endl;
+			cout<<"stack Elements Are: 20 10"<<endl;
+			cout<<endl;
+			cout<<endl;
+			
+			
+			cout<<"\t""Press 1 To Go Back:"<<endl;
+			int chos;
+			cin>>chos;
+			if(chos==1){
+				system("cls");
+				stack();
+			}
+			
+		
+		}
+	}
+	else if(choose==3){
+		system("cls");
+		main();
+	}else if(choose==4){
+		system("cls");
+		linear();
+	}
+	
+}
+/////////////////////////////function Queue /////////////////////////////////////////////////////////////////////////////////
+void structure::queue(){
+	
+	cout<<"This Page Belongs To Queue : "<<endl;
+	cout<<"----------------------------"<<endl;
+	cout<<endl;
+	cout<<endl;
+	cout<<"1: Definition Of Queue"<<endl;
+	cout<<"2: Program Of Queue"<<endl;
+	cout<<"3: Main Menu"<<endl;
+	cout<<"4: Go Back"<<endl;
+	int choose;
+	cin>>choose;
+	
+	if(choose==1){
+		system("cls");
+		cout<<"definition of queue"<<endl;
+	}
+	else if(choose==2){
+		system("cls");
+		cout<<"program of queue"<<endl;
+		
+	}
+	else if(choose==3){
+		system("cls");
+		main();
+	}else if(choose==4){
+		system("cls");
+		linear();
+	}
+	
+	
+}
+/////////////////////////////function Link-List ////////////////////////////////////////////////////////////////////////////
+void structure::link(){
+	
+	cout<<"This Page Belongs To Link Listed : "<<endl;
+	cout<<"----------------------------------"<<endl;
+	cout<<endl;
+	cout<<endl;
+	cout<<"1: Definition Of Link Listed"<<endl;
+	cout<<"2: Program Of Link Listed"<<endl;
+	cout<<"3: Main Menu"<<endl;
+	cout<<"4: Go Back"<<endl;
+	int choose;
+	cin>>choose;
+	
+	if(choose==1){
+		system("cls");
+		cout<<"definition of link listed"<<endl;
+		
+	}
+	else if(choose==2){
+		system("cls");
+		cout<<"program of link listed"<<endl;
+	}
+	else if(choose==3){
+		system("cls");
+		main();
+	}else if(choose==4){
+		system("cls");
+		linear();
+	}
+	
+	
+}
+////////////////////////////////////////////////////graph memory function/////////////////////////////////////////////////
+void structure::graphmemory(){
+	cout<<"Graph Into Memory Representation:"<<endl;
+	
+	
+	
+	
+	
+	cout<<"1: Go Back"<<endl;
+	int choice;
+	cin>>choice;
+	if(choice==1){
+		system("cls");
+		graphs();
+	}
+}
+
+////////////////////////////////////////////////memeory graph function////////////////////////////////////////////////////
+void structure::memeorygraph(){
+	cout<<"Memory into Graph Generation:"<<endl;
+	cout<<"1: Go Back"<<endl;
+	int choice;
+	cin>>choice;
+	if(choice==1){
+		system("cls");
+		graphs();
+	}
+}
+/////////////////////////////////////////////non linear tree function/////////////////////////////////////////////////////
+void structure::tree(){
+	cout<<"Non-Linear Data structure Tree:"<<endl;
+	cout<<endl;
+	cout<<"1: Go Back"<<endl;
+	int choice;
+	cin>>choice;
+	if(choice==1){
+		system("cls");
+		nonlinear();
+	}
+	
+}
+///////////////////////////////////////////////non linear graph function//////////////////////////////////////////////////
+void structure::graphs(){
+	cout<<"Non-Linear Data-Structure Graph:"<<endl;
+	cout<<endl;
+	cout<<"Link Reresentation Of Graph:"<<endl;
+	cout<<"1: Graph into memory representation"<<endl;
+	cout<<"2: Memory into graph generation"<<endl;
+	cout<<"3: Go Back"<<endl;
+	cout<<endl;
+	cout<<"Enter our Choice:"<<endl;
+	int choice;
+	cin>>choice;
+	if(choice==1){
+		system("cls");
+		graphmemory();
+	}
+	else if(choice==2){
+		system("cls");
+		memeorygraph();
+	}
+	else if(choice==3){
+		system("cls");
+		nonlinear();
+	}
+}
+/////////////////////////////////////////////non-linear data structure////////////////////////////////////////////////////
+void structure::nonlinear(){
+	cout<<"Non-Linear Data Structure"<<endl;
+	cout<<endl;
+	cout<<endl;
+	cout<<"1: Graphs"<<endl;
+	cout<<"2: Tree"<<endl;
+	cout<<"3: Go Back"<<endl;
+	cout<<endl;
+	cout<<"Enter Your Choice:"<<endl;
+	int choice;
+	cin>>choice;
+	switch(choice){
+		case 1:
+			system("cls");
+			graphs();
+			break;
+		case 2:
+			system("cls");
+			tree();
+			break;
+		case 3:
+			system("cls");
+			main();
+			break;
+	}
+	
+}
+
+//////////////////////////////////////main menu or main function/////////////////////////////////////////////////////////	
+void structure::main(){
+
+cout<<"DATA-STRUCTURE AND ALGORITHMS"<<endl;
+cout<<"------------------------------"<<endl;
+cout<<endl;
+cout<<"1: Linear Data Structure"<<endl;
+cout<<"2: Non-Linear Data Structure"<<endl;
+cout<<"3: Operations On Data Structure"<<endl;
+cout<<"4: Close The Program"<<endl;
+cout<<"Enter Your Choice :"<<endl;
+int choice;
+cin>>choice;
+	
+switch(choice){
+	case 1:
+		system("cls");
+		linear();
+		break;
+	case 2:
+		system("cls");
+		nonlinear();
+		break;
+	case 3:
+		system("cls");
+		cout<<"Operations On Data Structure"<<endl;
+		cout<<"CODE OF THIS PART BELONGS TO ABDUL MATIN SIDDIQUI."<<endl;
+		break;
+	case 4:
+		exit(0);
+		break;
+		
+	}
+}
+//////////////////////main-function////////////////////////////main-function/////////////main-function////////////////////
+main(){
+	
+	structure obj;
+	obj.main();
+	
+}
+
